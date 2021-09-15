@@ -1,0 +1,258 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1046{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.17134}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang22 #include<stdio.h>\par
+#include <stdlib.h>\par
+#include <locale.h>\par
+#include <string.h>\par
+#include <conio.h>\par
+\par
+char nome[100],nome2[100];\par
+int resp2,resp,curso,numins,sexo,idade,idadmed;\par
+int contapro,contaproinf,contaproadm,contaproel,contapro2,contaprom,contrep;\par
+float medadm,medif,medel;\par
+int nif,nadm,nel;\par
+float nota;\par
+//ver melhor aluno\par
+\par
+int idadeif,numeinsif,sexoif;\par
+int idadeadm,numeinsadm,sexoadm;\par
+int idadeel,numeinsel,sexoel;\par
+float notael;\par
+float notaadm;\par
+float notaif;\par
+char nomeif1[100],nomeif2[100];\par
+char nomeadm1[100],nomeadm2[100];\par
+char nomeel1[100],nomeel2[100];\par
+char teste[100];\par
+\par
+\par
+\par
+\par
+main()\{\par
+setlocale(LC_ALL,"Portuguese");\tab\tab\par
+\tab\tab system ("color 02");\par
+        printf ("PROJETO 2\'b0BIMESTRE\\n");\par
+\tab\tab printf ("Yan Ueno & Giuliana Vaez--1\'b0F\\n");\par
+\tab\tab printf (" ");\par
+\tab\tab printf ("---------------------------------------------------------------------------------------------\\n");\par
+\tab\tab printf ("descri\'e7\'e3p:\\n");\par
+\tab\tab printf ("Esse programa foi desinvolvido por Giuliana Vaez e Yan Ueno para projeto do segundo bimestre,\\n");\par
+\tab\tab printf ("do Col\'e9gio Uvivap , o programa simula um programa para cadastrar participantes de um simulado\\n"); \par
+\tab\tab printf ("e calculando alguns resultados apartir dos dados recebidos.\\n");\par
+\tab\tab printf ("-----------------------------------------------------------------------------------------------\\n");\par
+        printf ("Pressione alguma tecla e enter para executar o programa!\\n");\par
+\tab\tab scanf ("%s",&teste);\par
+\tab\tab system ("cls");\par
+\tab\tab system ("color 07");\par
+        //programa\par
+\tab\tab resp2=1;\par
+\tab\tab while (resp2==1)\{\par
+\tab\tab\tab printf ("digite seu primeiro nome:\\n");\par
+\tab\tab\tab scanf ("%s",&nome);\par
+\tab\tab\tab printf ("digite seu sobrenome:\\n");\par
+\tab\tab\tab scanf ("%s",&nome2);\par
+\tab\tab\tab printf ("qual sua idade?\\n");\par
+\tab\tab\tab scanf ("%d",&idade);\par
+\tab\tab\tab printf ("qual seu numero de inscri\'e7\'e3o\\n");\par
+\tab\tab\tab scanf ("%d",&numins);\par
+\tab\tab\tab resp=1;\par
+\tab\tab\tab while (resp==1)\{\par
+\tab\tab\tab\tab\tab printf ("qual o curso escolhido?(1-informatica|2-Administra\'e7\'e3o|3-eletronica)\\n");\par
+\tab\tab\tab\tab\tab scanf ("%d",&curso);\par
+\tab\tab\tab\tab\tab printf ("%d\\n",curso);\par
+\tab\tab\tab\tab\tab if ((curso==1)||(curso==2)||(curso==3))\{\par
+\tab\tab\tab\tab\tab\tab resp=2;\par
+\tab\tab\tab\tab\tab\}else\{\par
+                        system ("color 0c");\par
+                        printf("escolha apenas dentro dos cursos oferecidos !\\n");\tab\tab\tab\tab\tab\par
+                    \}\tab\par
+\tab\tab\tab         \par
+            \}\par
+\tab\tab\tab system ("color 07");\par
+            resp=1;\par
+\tab\tab\tab while (resp==1)\{\par
+\tab\tab\tab\tab printf ("qual seu sexo ?(1-Masculino|2-Feminino)\\n");\par
+\tab\tab\tab\tab scanf ("%d",&sexo);\par
+\tab\tab\tab\tab if ((sexo==1)||(sexo==2))\{\par
+\tab\tab\tab\tab\tab resp=2;\par
+\tab\tab\tab\tab\}else\{\par
+\tab\tab\tab\tab\tab system ("color 0c");\par
+                    printf ("excolha apenas dentor das op\'e7\'f5es disponiveis !\\n");\par
+\tab\tab\tab\tab\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\}\tab\tab\tab\par
+\tab\tab\tab system ("color 07");\par
+            resp=1;\par
+\tab\tab\tab while (resp==1)\{\par
+\tab\tab\tab\tab printf ("digite sua nota:\\n");\par
+\tab\tab\tab\tab scanf ("%f",&nota);\par
+\tab\tab\tab\tab if ((nota>=0)&&(nota<=10))\{\par
+\tab\tab\tab\tab\tab resp=2;\par
+\tab\tab\tab\tab\}else\{\par
+\tab\tab\tab\tab\tab system ("color 0c");\par
+                    printf ("A nota do vestibular vai apenas de 0,00-10,00 !\\n");\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\}\par
+\tab\tab\tab //A\par
+\tab\tab\tab system ("color 07");\par
+            system ("cls");\par
+\tab\tab\tab printf ("canditado %s %s\\n",nome,nome2);\par
+\tab\tab\tab printf ("n\'b0 de inscri\'e7\'e3o:%d\\n",numins);\par
+\tab\tab\tab if (curso==1)\{\par
+\tab\tab\tab\tab printf ("curso:Informatica\\n");\par
+\tab\tab\tab\tab nif=nif+1;\tab\tab\par
+\tab\tab\tab\}else\{\par
+\tab\tab\tab\tab if (curso==2)\{\par
+\tab\tab\tab\tab\tab printf ("curso:Administra\'e7\'e3o\\n");\par
+\tab\tab\tab\tab\tab nadm=nadm+1;\par
+\tab\tab\tab\tab\}else\{\par
+\tab\tab\tab\tab\tab if (curso==3)\{\par
+\tab\tab\tab\tab\tab\tab printf ("curso:Eletronica\\n");\par
+\tab\tab\tab\tab\tab\tab nel=nel+1;\par
+\tab\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\}\par
+\tab\tab\tab printf ("idade:%d\\n",idade);\par
+\tab\tab\tab printf ("nota:%.2f\\n",nota);\par
+\tab\tab\tab //contador de aprovados total\par
+\tab\tab\tab if ((idade>=18)&&(nota>=7))\{\par
+\tab\tab\tab\tab printf ("Aprovado\\n");\par
+\tab\tab\tab\tab printf (" ");\par
+                contapro=contapro+1;\par
+\tab\tab\tab\}else\{\par
+\tab\tab\tab\tab printf ("Reprovado\\n");\par
+\tab\tab\tab  printf (" ");\par
+            \}\par
+\tab\tab\tab //contador de aprovados em cada curso\par
+\tab\tab\tab if ((curso==1)&&(nota>=7)&&(idade>=18))\{\par
+\tab\tab\tab\tab contaproinf=contaproinf+1;\par
+\tab\tab\tab\}else\{\par
+\tab\tab\tab\tab if ((curso==2)&&(nota>=7)&&(idade>=18))\{\par
+\tab\tab\tab\tab\tab contaproadm=contaproadm+1;\par
+\tab\tab\tab\tab\}else\{\par
+\tab\tab\tab\tab\tab if ((curso==3)&&(nota>=7)&&(idade>=18))\{\par
+\tab\tab\tab\tab\tab\tab contaproel=contaproel+1;\par
+\tab\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\par
+\tab\tab\tab\tab\par
+\tab\tab\tab\}\par
+\tab\tab\tab //contador de aprovados homens\par
+\tab\tab\tab if ((nota>=7)&&(idade>=18)&&(sexo==1))\{\par
+\tab\tab\tab\tab contaprom=contaprom+1;\par
+\tab\tab\tab\}\par
+\tab\tab\tab //media de idade\par
+\tab\tab\tab if ((curso==1))\{\par
+\tab\tab\tab\tab medif=medif+idade;\par
+\tab\tab\tab\}else\{\par
+\tab\tab\tab\tab if(curso==2)\{\par
+\tab\tab\tab\tab\tab medadm=medadm+idade;\par
+\tab\tab\tab\tab\}else\{\par
+\tab\tab\tab\tab\tab if (curso==3)\{\par
+\tab\tab\tab\tab\tab\tab medel=medel+idade;\par
+\tab\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\}\par
+\tab\tab\tab //quantidade de reprovados entre 17-20\par
+\tab\tab\tab if ((idade>=17)&&(idade<=20)&&(nota<7)||(idade<=18))\{\par
+\tab\tab\tab\tab contrep=contrep+1;\par
+\tab\tab\tab\}\par
+\tab\tab\tab //melhor candidato em cada curso\par
+\tab\tab\tab if ((curso==1)&&(nota>notaif))\{\par
+\tab\tab\tab\tab strcpy (nomeif1,nome);\par
+\tab\tab\tab\tab strcpy (nomeif2,nome2);\par
+\tab\tab\tab\tab notaif=nota;\par
+\tab\tab\tab\tab idadeif=idade;\par
+\tab\tab\tab\tab numeinsif=numins;\par
+\tab\tab\tab\}else\{\par
+\tab\tab\tab\tab if ((curso==2)&&(nota>notaadm))\{\par
+\tab\tab\tab\tab\tab strcpy (nomeadm1,nome);\par
+\tab\tab\tab\tab\tab strcpy (nomeadm2,nome2);\par
+\tab\tab\tab\tab\tab notaadm=nota;\par
+\tab\tab\tab\tab\tab idadeadm=idade;\par
+\tab\tab\tab\tab\tab numeinsadm=numins;\tab\par
+\tab\tab\tab\tab\}else\{\par
+\tab\tab\tab\tab\tab if ((curso==3)&&(nota>notael))\{\par
+\tab\tab\tab\tab\tab\tab strcpy (nomeel1,nome);\par
+\tab\tab\tab\tab\tab\tab strcpy (nomeel2,nome2);\par
+\tab\tab\tab\tab\tab\tab notael=nota;\par
+\tab\tab\tab\tab\tab\tab idadeel=idade;\par
+\tab\tab\tab\tab\tab\tab numeinsel=numins;\tab\par
+\tab\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\par
+\tab\tab\tab\}\par
+\tab\tab\tab\par
+\tab\tab resp=1;\par
+\tab\tab while (resp==1)\{\par
+\tab\tab printf ("Deseja cadastrar mais um aluno(1-Sim|2-N\'e3o)\\n");\par
+\tab\tab scanf ("%d",&resp2);\par
+\tab\par
+\tab\tab if ((resp2==1)||(resp2==2))\{\par
+            resp=2;\par
+\tab\tab     system ("cls");\par
+        \}else\{\par
+\tab\tab\tab system ("color 04");\par
+            printf ("Responda Sim ou N\'e3o !\\n");\par
+\tab\tab\tab\}\par
+\tab\tab\}\par
+\tab\par
+\par
+\tab\tab\}\par
+\tab\tab system ("color 07");\par
+        if (nif>0)\{\par
+        medif=medif/nif;\par
+        \}\par
+        if (nadm>0)\{\par
+        medadm=medadm/nadm;\par
+        \}\par
+        if (nel>0)\{\par
+        medel=medel/nel;\par
+        \}\par
+\par
+\par
+\par
+\par
+//MOSTRAR\par
+\tab\tab printf ("Numero de candidatos aprovados em cada curso:\\n");\par
+\tab\tab printf ("Informatica:%d\\n",contaproinf);\par
+\tab\tab printf ("Administra\'e7\'e3o:%d\\n",contaproadm);\par
+\tab\tab printf ("Eletronica:%d\\n",contaproel);\par
+\tab\tab printf ("------------------------------------------------\\n");\par
+\tab\tab printf ("Total de aprovados no vestibular:%d\\n",contapro);\par
+\tab\tab printf ("Total de aprovados masculinos:%d\\n",contaprom);\par
+\tab\tab printf ("------------------------------------------------\\n");\par
+\tab\tab printf ("A media de idade dos alunos de cada curso foi:\\n");\par
+\tab\tab printf ("Informatica:%.2f\\n",medif);\par
+\tab\tab printf ("Administra\'e7\'e3o:%.2f\\n",medadm);\par
+\tab\tab printf ("Eletronica:%.2f\\n",medel);\par
+\tab\tab printf ("------------------------------------------------\\n");\par
+\tab\tab printf ("a quantidade de reprovados entre 17-20 foi de:\\n",contrep);\par
+\tab\tab printf ("------------------------------------------------\\n");\par
+\tab\tab printf ("Os melhore em cada curso foram:\\n");\par
+\tab\tab printf ("\\n");\par
+\tab\tab printf ("Informatica:\\n");\par
+\tab\tab printf ("Nome:%s %s\\n",nomeif1,nomeif2);\par
+\tab\tab printf ("Idade:%.2d\\n",idadeif);\par
+\tab\tab printf ("N\'b0 de inscri\'e7\'e3o:%d\\n",numeinsif);\par
+\tab\tab printf ("Nota:%.2f\\n",notaif);\par
+\tab\tab printf ("\\n");\par
+\tab\tab printf ("Administra\'e7\'e3o:\\n");\par
+\tab\tab printf ("Nome:%s %s\\n",nomeadm1,nomeadm2);\par
+\tab\tab printf ("Idade:%d\\n",idadeadm);\par
+\tab\tab printf ("N\'b0 de inscri\'e7\'e3o:%d\\n",numeinsadm);\par
+\tab\tab printf ("Nota:%.2f\\n",notaadm);\par
+\tab\tab printf ("\\n");\par
+\tab\tab printf ("Eletronica:\\n");\par
+\tab\tab printf ("Nome:%s %s\\n",nomeel1,nomeel2);\par
+\tab\tab printf ("Idade:%d\\n",idadeel);\par
+\tab\tab printf ("N\'b0 de inscri\'e7\'e3o:%d\\n",numeinsel);\par
+\tab\tab printf ("Nota:%.2f\\n",notael);\par
+\tab\tab system ("PAUSE");\par
+\tab\par
+\tab\par
+\tab\par
+\tab\par
+\}\par
+}
+ 
